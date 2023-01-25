@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weather, setWeather] = useState({});
   const [ready, setReady] = useState(false);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.defaultCity);
 
   function importCity(event) {}
   function showWeather(response) {
@@ -44,7 +44,6 @@ export default function Weather() {
       </div>
     );
   } else {
-    let city = "Tel Aviv";
     let apiKey = "f8e6a9e3d6fde87cb38868da460b1371";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
