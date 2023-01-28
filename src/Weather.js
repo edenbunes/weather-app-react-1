@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Date from "./Date";
+
 import axios from "axios";
 
 export default function Weather(props) {
@@ -11,9 +13,10 @@ export default function Weather(props) {
       temp: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
       cityName: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.dt * 1000),
     });
     setReady(true);
   }
@@ -26,7 +29,7 @@ export default function Weather(props) {
   }
 
   function Search() {
-    let apiKey = "311f1f45fee82242ab4086372ab360f5";
+    let apiKey = "f3887e262c88d1158f7e2ef4998e234c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
   }
@@ -41,6 +44,7 @@ export default function Weather(props) {
           />
           <input type="submit" value="Search" />
         </form>
+        <Date dateData={weather.date} />
         <h1>{weather.cityName}</h1>
         <div className="row">
           <div className="col">
