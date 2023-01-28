@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Date from "./Date";
-
+import Temperature from "./Temperature";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -52,7 +52,7 @@ export default function Weather(props) {
             <div>{weather.description}</div>
           </div>
           <div className="col">
-            <div>{weather.temp} ℃ | ℉ </div>
+            <Temperature celsius={weather.temp} />
             <div>Humidity: {weather.humidity}%</div>
             <div>Wind: {weather.wind} km/h</div>
           </div>
