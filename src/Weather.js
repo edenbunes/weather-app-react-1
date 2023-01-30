@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Date from "./Date";
+import ApiDate from "./ApiDate";
 import Temperature from "./Temperature";
 import axios from "axios";
 
@@ -44,7 +44,11 @@ export default function Weather(props) {
           />
           <input type="submit" value="Search" />
         </form>
-        <Date dateData={weather.date} />
+        <div>
+          Last updated:&nbsp;
+          <ApiDate dateData={weather.date} />
+        </div>
+
         <h1>{weather.cityName}</h1>
         <div className="row">
           <div className="col">
