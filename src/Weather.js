@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ApiDate from "./ApiDate";
 import Temperature from "./Temperature";
 import axios from "axios";
+import "./Weather.css";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({});
@@ -35,25 +36,32 @@ export default function Weather(props) {
   }
   if (ready) {
     return (
-      <div className="container">
+      <div className="Weather">
         <form onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Type a city..."
-            onChange={importCity}
-          />
-          <input type="submit" value="Search" />
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="text"
+                placeholder="Type a city..."
+                onChange={importCity}
+                autoFocus="on"
+                className="form-control"
+              />
+            </div>
+            <div className="col-3">
+              <input type="submit" value="Search" className="btn btn-primary" />
+            </div>
+          </div>
         </form>
         <div>
           Last updated:&nbsp;
           <ApiDate dateData={weather.date} />
         </div>
-
         <h1>{weather.cityName}</h1>
         <div className="row">
           <div className="col">
             <img src={weather.icon} alt={weather.description} />
-            <div>{weather.description}</div>
+            <div className="text-capitalize">{weather.description}</div>
           </div>
           <div className="col">
             <Temperature celsius={weather.temp} />
