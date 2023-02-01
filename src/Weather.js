@@ -3,6 +3,7 @@ import ApiDate from "./ApiDate";
 import Temperature from "./Temperature";
 import axios from "axios";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({});
@@ -18,6 +19,7 @@ export default function Weather(props) {
       cityName: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
     setReady(true);
   }
@@ -69,10 +71,11 @@ export default function Weather(props) {
             <div>Wind: {weather.wind} km/h</div>
           </div>
         </div>
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
     Search();
-    return "Loading...";
+    return null;
   }
 }
