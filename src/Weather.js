@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ApiDate from "./ApiDate";
-import Temperature from "./Temperature";
 import axios from "axios";
 import "./Weather.css";
 import WeatherForecast from "./WeatherForecast";
@@ -66,7 +65,7 @@ export default function Weather(props) {
             <div className="text-capitalize">{weather.description}</div>
           </div>
           <div className="col">
-            <Temperature celsius={weather.temp} />
+            <div>{weather.temp}c°</div>
             <div>Humidity: {weather.humidity}%</div>
             <div>Wind: {weather.wind} km/h</div>
           </div>
