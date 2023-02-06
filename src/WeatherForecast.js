@@ -6,6 +6,10 @@ export default function WeatherForecast(props) {
   const [forecastOn, setForecastOn] = useState(false);
   const [dailyForecastData, setDailyForecastApi] = useState(null);
 
+  useEffect(() => {
+    setForecastOn(false);
+  }, [props.coordinates]);
+
   function showForecast(response) {
     setDailyForecastApi(response.data.daily);
     setForecastOn(true);
