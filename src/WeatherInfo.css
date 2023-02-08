@@ -7,8 +7,8 @@
   line-height: 70px;
   margin: auto;
   padding-left: 10px;
+  font-weight: 700;
 }
-
 .WeatherInfo .today-forecast {
   margin-bottom: 80px;
 }
@@ -22,12 +22,44 @@
   color: white;
 }
 .WeatherInfo .main-icon {
-  width: 66%;
   background-color: #a0e7e5;
   border-radius: 50%;
 }
 .WeatherInfo .description {
-  font-weight: bold;
+  font-weight: 500;
   margin: auto;
   font-size: 30px;
+}
+.WeatherInfo .extra-info {
+  font-weight: 300;
+}
+@media (max-width: 1000px) {
+  .WeatherInfo .today-forecast {
+    text-align: center;
+  }
+  .WeatherInfo h1 {
+    margin: 40px auto 40px;
+
+    font-size: 50px;
+    text-align: center;
+  }
+  .WeatherInfo .temperature {
+    font-size: 50px;
+    margin: 20px;
+  }
+  .WeatherInfo .unit {
+    position: relative;
+    top: -17px;
+  }
+  .WeatherInfo .description {
+    font-weight: 400;
+    font-size: 17px;
+  }
+  .WeatherInfo .main-icon {
+    width: 50%;
+  }
+  .WeatherInfo .extra-info {
+    font-size: 16px;
+    padding: 0px;
+  }
 }

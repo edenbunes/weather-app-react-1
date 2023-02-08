@@ -3,7 +3,10 @@
 }
 .weatherForecast .daily-info {
   background-color: #a0e7e5;
-  margin: 0px 15px;
+  margin: 5px;
   padding: 15px;
   border-radius: 5px;
+}
+
+@media (max-width: 800px) {
 }

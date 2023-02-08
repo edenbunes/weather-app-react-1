@@ -11,3 +11,12 @@
 .Weather .date {
   color: white;
 }
+
+@media (max-width: 570px) {
+  .Weather input {
+    font-size: 15px;
+  }
+  .Weather .date {
+    font-size: 15px;
+  }
+}
