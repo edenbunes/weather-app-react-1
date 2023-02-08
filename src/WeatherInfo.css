@@ -24,6 +24,7 @@
 .WeatherInfo .main-icon {
   background-color: #a0e7e5;
   border-radius: 50%;
+  margin-left: 20px;
 }
 .WeatherInfo .description {
   font-weight: 500;
@@ -57,6 +58,7 @@
   }
   .WeatherInfo .main-icon {
     width: 50%;
+    margin-left: 0px;
   }
   .WeatherInfo .extra-info {
     font-size: 16px;
