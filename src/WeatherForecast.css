@@ -1,0 +1,9 @@
+.weatherForecast {
+  text-align: center;
+}
+.weatherForecast .daily-info {
+  background-color: #a0e7e5;
+  margin: 0px 15px;
+  padding: 15px;
+  border-radius: 5px;
+}

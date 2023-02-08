@@ -10,6 +10,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
+    console.log(response.data);
     setWeather({
       temp: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
@@ -54,20 +55,36 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <div>
+        <div className="date">
           Last updated:&nbsp;
           <ApiDate dateData={weather.date} />
         </div>
-        <h1>{weather.cityName}</h1>
-        <div className="row">
-          <div className="col">
-            <img src={weather.icon} alt={weather.description} />
-            <div className="text-capitalize">{weather.description}</div>
-          </div>
-          <div className="col">
-            <div>{weather.temp}c°</div>
-            <div>Humidity: {weather.humidity}%</div>
-            <div>Wind: {weather.wind} km/h</div>
+        <div className="top-information">
+          <h1>{weather.cityName}</h1>
+          <div className="row today-forecast">
+            <div className="col-3 main-info-left">
+              <img
+                className="main-icon"
+                src={weather.icon}
+                alt={weather.description}
+              />
+            </div>
+            <div className="col-3 m-auto description text-capitalize">
+              {weather.description}
+            </div>
+            <div className="col-2  m-auto  main-info-right">
+              <div className="temperature">
+                {weather.temp} <span className="unit">c°</span>
+              </div>
+            </div>
+            <div className="col-2  m-auto">
+              <div>Humidity: {weather.humidity}%</div>
+              <div>Wind: {weather.wind} km/h</div>
+            </div>
+            <div className="col-2  m-auto">
+              <div>Humidity: {weather.humidity}%</div>
+              <div>Wind: {weather.wind} km/h</div>
+            </div>
           </div>
         </div>
         <WeatherForecast coordinates={weather.coordinates} />

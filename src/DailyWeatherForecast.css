@@ -1,0 +1,14 @@
+.DailyWeatherForecast {
+  color: #624f82;
+}
+.DailyWeatherForecast .day-name {
+  font-weight: bold;
+  font-size: 25px;
+}
+.DailyWeatherForecast .max-temp {
+  font-weight: bold;
+}
+.DailyWeatherForecast .min-temp {
+  opacity: 60%;
+  font-weight: bold;
+}

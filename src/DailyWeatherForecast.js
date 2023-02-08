@@ -1,4 +1,5 @@
 import React from "react";
+import "./DailyWeatherForecast.css";
 
 export default function DailyWeatherForecast(props) {
   let minTemp = Math.round(props.dailyData.temp.min);
@@ -22,11 +23,12 @@ export default function DailyWeatherForecast(props) {
     return day;
   }
   return (
-    <div>
-      <div>{dayName()}</div>
+    <div className="DailyWeatherForecast ">
+      <div className="day-name">{dayName()}</div>
       <img src={icon} alt={description} />
       <div>
-        <span>{maxTemp}°</span> <span>{minTemp}°</span>
+        <span className="max-temp">{maxTemp}°</span>{" "}
+        <span className="min-temp">{minTemp}°</span>
       </div>
     </div>
   );
