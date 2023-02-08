@@ -3,6 +3,7 @@ import ApiDate from "./ApiDate";
 import axios from "axios";
 import "./Weather.css";
 import WeatherForecast from "./WeatherForecast";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({});
@@ -10,7 +11,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
-    console.log(response.data);
     setWeather({
       temp: Math.round(response.data.main.temp),
       tempMin: Math.round(response.data.main.temp_min),
@@ -61,34 +61,7 @@ export default function Weather(props) {
           Last updated:&nbsp;
           <ApiDate dateData={weather.date} />
         </div>
-        <div className="top-information">
-          <h1>{weather.cityName}</h1>
-          <div className="row today-forecast">
-            <div className="col-3 main-info-left">
-              <img
-                className="main-icon"
-                src={weather.icon}
-                alt={weather.description}
-              />
-            </div>
-            <div className="col-3 m-auto description text-capitalize">
-              {weather.description}
-            </div>
-            <div className="col-2  m-auto  main-info-right">
-              <div className="temperature">
-                {weather.temp} <span className="unit">c°</span>
-              </div>
-            </div>
-            <div className="col-2  m-auto">
-              <div>Min temp: {weather.tempMin}°</div>
-              <div>Max temp: {weather.tempMax}°</div>
-            </div>
-            <div className="col-2  m-auto">
-              <div>Humidity: {weather.humidity}%</div>
-              <div>Wind: {weather.wind} km/h</div>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo weatherData={weather} />
         <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
