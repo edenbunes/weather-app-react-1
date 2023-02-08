@@ -7,7 +7,7 @@ export default function WeatherInfo(props) {
       <div className="top-information">
         <h1>{props.weatherData.cityName}</h1>
         <div className="row today-forecast">
-          <div className="col-3 main-info-left">
+          <div className="col-3">
             <img
               className="main-icon"
               src={props.weatherData.icon}
@@ -17,7 +17,7 @@ export default function WeatherInfo(props) {
           <div className="col-3 m-auto description text-capitalize">
             {props.weatherData.description}
           </div>
-          <div className="col-2  m-auto  main-info-right">
+          <div className="col-2  m-auto">
             <div className="temperature">
               {props.weatherData.temp} <span className="unit">c°</span>
             </div>
