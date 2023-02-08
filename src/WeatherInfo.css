@@ -1,0 +1,37 @@
+.WeatherInfo h1 {
+  font-size: 60px;
+  margin: 50px auto 20px;
+}
+.WeatherInfo .temperature {
+  font-size: 70px;
+  line-height: 70px;
+  margin: auto;
+  padding-left: 10px;
+}
+
+.WeatherInfo .today-forecast {
+  margin-bottom: 80px;
+}
+.WeatherInfo .unit {
+  font-size: 30px;
+  position: relative;
+  top: -30px;
+  left: -10px;
+}
+.WeatherInfo .top-information {
+  color: white;
+}
+.WeatherInfo .main-icon {
+  width: 66%;
+  background-color: #a0e7e5;
+  border-radius: 50%;
+}
+.WeatherInfo .description {
+  font-weight: bold;
+  margin: auto;
+  font-size: 30px;
+}
+.WeatherInfo .main-info-right {
+}
+.WeatherInfo .main-info-left {
+}
