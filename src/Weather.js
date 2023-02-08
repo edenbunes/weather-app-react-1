@@ -13,6 +13,8 @@ export default function Weather(props) {
     console.log(response.data);
     setWeather({
       temp: Math.round(response.data.main.temp),
+      tempMin: Math.round(response.data.main.temp_min),
+      tempMax: Math.round(response.data.main.temp_max),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
@@ -78,8 +80,8 @@ export default function Weather(props) {
               </div>
             </div>
             <div className="col-2  m-auto">
-              <div>Humidity: {weather.humidity}%</div>
-              <div>Wind: {weather.wind} km/h</div>
+              <div>Min temp: {weather.tempMin}°</div>
+              <div>Max temp: {weather.tempMax}°</div>
             </div>
             <div className="col-2  m-auto">
               <div>Humidity: {weather.humidity}%</div>
